@@ -1,0 +1,46 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<p id="notice"><%= notice %></p>
+
+<p class="crime_desc"><%= @crime.description %></p>
+
+
+<br>
+
+<!--   <%= link_to 'Edit', edit_crime_path(@crime) %> | -->
+<!--   <%= link_to 'Back', crimes_path %> | -->
+
+<%= form_for(@crime) do |g| %>
+    <% @frequency = Freq.create(rating: 0, crime_id: @crime.id) %> 
+    <% @sever = Severity.create(rating: 0, crime_id: @crime.id) %>
+   
+    <p class="type_title">Frequency:</p>
+    <div class="rbutton"><%= g.radio_button :f, 1%>1</div>
+    <div class="rbutton"><%= g.radio_button :f, 2%>2</div>
+    <div class="rbutton"><%= g.radio_button :f, 3%>3</div></div>
+    <div class="rbutton"><%= g.radio_button :f, 4%>4</div>
+    <div class="rbutton"><%= g.radio_button :f, 5%>5</div>
+    <div class="rbutton"><%= g.radio_button :f, 6%>6</div>
+    <div class="rbutton"><%= g.radio_button :f, 7%>7</div>
+    <br>
+    <p class="measures">1 = not frequent (ex. blackmail)</p>
+    <p class="measures">7 = very frequent (ex. littering)</p>
+    <br><br>
+
+    <p class="type_title">Severity:</p>
+    <div class="rbutton"><%= g.radio_button :s, 1%>1</div>
+    <div class="rbutton"><%= g.radio_button :s, 2%>2</div>
+    <div class="rbutton"><%= g.radio_button :s, 3%>3</div>
+    <div class="rbutton"><%= g.radio_button :s, 4%>4</div>
+    <div class="rbutton"><%= g.radio_button :s, 5%>5</div>
+    <div class="rbutton"><%= g.radio_button :s, 6%>6</div>
+    <div class="rbutton"><%= g.radio_button :s, 7%>7</div>
+    <p class="measures">1 = not severe (ex. jaywalking)</p>
+    <p class="measures">7 = very severe (ex. murder)</p>
+    <br><br>
+    <% @frequency.update(rating: @crime.f) %>
+    <% @sever.update(rating: @crime.s) %>
+    <%= g.button :submit %>
+
+
+<% end %>

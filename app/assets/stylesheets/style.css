@@ -1,0 +1,76 @@
+.radio {
+	font-weight: bold;
+	font-size: 1em;
+}
+
+.desc {
+	font-size: 1.7em;
+}
+
+.crime_desc {
+	font-size: 1.5em;
+	padding: 10px;
+}
+
+
+.rbutton {
+	margin:15px;
+	display: inline;
+}
+
+.measures {
+	margin: 10px;
+}
+
+.type_title {
+	font-style: normal;
+	font-size: 18px;
+	margin: 15px;
+}
+
+a {
+	cursor: pointer;
+}
+
+button {
+	font-size: 18px;
+	padding: 5px 13px;
+	box-shadow: 5px;
+	cursor: pointer;
+}
+
+.instructions {
+	width: 50%;
+}
+
+table, p {
+	margin: auto;
+}
+
+td {
+	padding: 10px;
+}
+
+.label {
+	font-size: 1.25em;
+	padding: 15px;
+	margin-bottom: 20px;
+}
+
+.finish {
+	background-color: #f4f4f4;
+	margin: auto;
+	width: 150px;
+	height: 25px;
+	border-radius: 3px;
+}
+
+.finish a {
+	padding: 3px;
+	padding-top: 6px;
+}
+
+
+
+
+

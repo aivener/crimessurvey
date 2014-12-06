@@ -1,0 +1,30 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+<h1>All Crimes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <p><% @crimes.each do |crime| %></p>
+      <tr>
+        <td><%= crime.description %></td>
+        <td><%= link_to 'Show', crime %></td>
+        <td><%= link_to 'Edit', edit_crime_path(crime) %></td>
+        <td><%=  %>
+        <td><%= link_to 'Destroy', crime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Data', '/freqs' %><br>
+<%= link_to 'New Crime', new_crime_path %><br>
+<%= link_to 'Start', '/pages/start' %>

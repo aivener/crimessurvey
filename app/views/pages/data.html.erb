@@ -1,0 +1,32 @@
+<%= "Total crimes: #{Crime.count}" %><br>
+<%= "Total responses: #{Freq.count/Crime.count}" %><br><br>
+<% Crime.all.each do |c| %>
+	<% total = 0 %>
+	<% count = 0 %>
+	<% Freq.all.each do |f| %>
+		<% if f.crime_id == c.id %>
+			<% if f.rating %>
+				<% total += f.rating %>
+				<% count += 1 %>
+			<% end %>
+		<% end %>
+	<% end %>
+	<%= "#{c.description}: #{total/count}" %><br>
+	<%=  %>
+<% end %>
+<br>
+<% Crime.all.each do |c| %>
+	<% total = 0 %>
+	<% count = 0 %>
+	<% Severity.all.each do |f| %>
+		<% if f.crime_id == c.id %>
+			<% if f.rating %>
+				<% total += f.rating %>
+				<% count += 1 %>
+			<% end %>
+		<% end %>
+	<% end %>
+	<%= "#{c.description}: #{total/count}" %><br>
+	<%=  %>
+<% end %>
+
