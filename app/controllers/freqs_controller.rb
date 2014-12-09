@@ -37,7 +37,7 @@ class FreqsController < ApplicationController
   	private
    	
     def freq_params
-      params.require(:freq).permit(:rating, :id)
+      params.require(:freq).permit(:rating, :id, :crime_id)
     end
 
 

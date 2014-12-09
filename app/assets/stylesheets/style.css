@@ -21,6 +21,10 @@
 	display: inline;
 }
 
+.rbutton :hover {
+	cursor: pointer;
+}
+
 .measures {
 	margin: 10px;
 }

@@ -46,6 +46,7 @@ class CrimesController < ApplicationController
   #   #     format.html { redirect_to @crime, notice: 'Crime was successfully updated.' }
   #   #     format.json { render :show, status: :ok, location: @crime }
   #   #   else
+
   #   #     format.html { render :edit }
   #   #     format.json { render json: @crime.errors, status: :unprocessable_entity }
   #   #   end

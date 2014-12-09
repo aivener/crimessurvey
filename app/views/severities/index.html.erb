@@ -1,19 +1,11 @@
 Severities index<br>
 
-<% Crime.all.each do |c| %>
-    <% Severity.all.each do |s| %>
-    	<% if s.crime_id == c.id %>
-    		<% s.rating = c.s %>
-    	<% end %>
-    <% end %>
-<% end %>
-
-
-<%= @severities.size %><br>
 <% @severities.each do |g| %>
-	<%= "crime id: " %>
-	<%= g.crime_id %>
-	<%= "rating: " %>
-	<%= g.rating %> 
-    <br>
+    <% if (g.rating) %>
+        <%= "crime id: " %>
+        <%= g.crime_id %>
+        <%= "rating: " %>
+        <%= g.rating %>
+        <br>
+    <% end %>
 <% end %>
