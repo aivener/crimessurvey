@@ -1,32 +1,39 @@
 <%= "Total crimes: #{Crime.count}" %><br>
 <%= "Total responses: #{Freq.count/Crime.count}" %><br><br>
+<% ftotal = 0 %>
+<% stotal = 0 %>
+<% fcount = 0 %>
+<% scount = 0 %>
+
+<%= "Frequency Averages:" %><br>
 <% Crime.all.each do |c| %>
-	<% total = 0 %>
 	<% count = 0 %>
 	<% Freq.all.each do |f| %>
 		<% if f.crime_id == c.id %>
 			<% if f.rating %>
-				<% total += f.rating %>
-				<% count += 1 %>
+				<% ftotal += f.rating %>
+				<% fcount += 1 %>
 			<% end %>
 		<% end %>
 	<% end %>
-	<%= "#{c.description}: #{total/count}" %><br>
-	<%=  %>
+	<%= "#{c.description}: #{ftotal/fcount}" %><br>
+
 <% end %>
+
 <br>
+<%= "Severity Averages:" %><br>
 <% Crime.all.each do |c| %>
 	<% total = 0 %>
 	<% count = 0 %>
 	<% Severity.all.each do |f| %>
 		<% if f.crime_id == c.id %>
 			<% if f.rating %>
-				<% total += f.rating %>
-				<% count += 1 %>
+				<% stotal += f.rating %>
+				<% scount += 1 %>
 			<% end %>
 		<% end %>
 	<% end %>
-	<%= "#{c.description}: #{total/count}" %><br>
-	<%=  %>
+	<%= "#{c.description}: #{stotal/scount}" %><br>
+
 <% end %>
 
