@@ -16,7 +16,9 @@
 			<% end %>
 		<% end %>
 	<% end %>
-	<%= "#{c.description}: #{ftotal/fcount}" %><br>
+	<% if (fcount != 0) %>
+		<%= "#{c.description}: #{ftotal/fcount}" %><br>
+	<% end %>
 
 <% end %>
 
@@ -33,6 +35,8 @@
 			<% end %>
 		<% end %>
 	<% end %>
-	<%= "#{c.description}: #{stotal/scount}" %><br>
+	<% if (scount != 0) %>
+		<%= "#{c.description}: #{stotal/scount}" %><br>
+	<% end %>
 <% end %>
 
